@@ -53,15 +53,12 @@ export const HeroContent = styled.div`
 
     @media screen and (max-width: 768px) {
       margin-top: 0.5rem;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    padding-top: 3.5rem;
-
-    > :last-child {
-      width: 100%;
-      height: 100%;
-    }
-  }
+    /* height: 43.125rem; */
+    height: 800px;
+    background: ${colors.primary};
+    color: ${colors.neutral};
+    text-align: center;
+    }}
 `;
+    
+
