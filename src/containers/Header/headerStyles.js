@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import { colors } from "../../utils";
 
+
+
 export const Container = styled.header`
     background: ${colors.primary};
     color: ${colors.neutral};
     width: 100%;
     min-height: 4rem;
     overflow: hidden;
-    position: sticky;
-    top: 0;
 `;
 
 export const DesktopNav = styled.nav`

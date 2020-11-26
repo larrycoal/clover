@@ -1,7 +1,7 @@
 import React from "react";
 import { Wrapper, Button, Stack } from "../../components";
 import { InfoContainer } from "./InfoStyles";
-import { youMatter, mentalPain } from "./data";
+//import { youMatter, mentalPain } from "./data";
 
 export const InfoVertical = ({
     headline,

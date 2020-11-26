@@ -12,6 +12,7 @@ export const Button = styled.button`
     outline: none;
     cursor: pointer;
     white-space: nowrap;
+    z-index:10;
 
     ${props => props.primary && css`
         background: ${colors.primary};
