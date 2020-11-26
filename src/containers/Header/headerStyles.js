@@ -30,13 +30,38 @@ export const DesktopNav = styled.nav`
         > * + * {
             margin-left: 2rem;
         }
+        
+        
+        a{
+            color: #fff;
+            position: relative;
+            font-size: 18px;
+            font-weight: 500;
+            
+            :hover ::after{
+             transform: scale(1);
+             visibility: visible;
+             }
+           
 
-        a:hover, 
-        a:active, 
-        .active {
-            border-bottom: 4px solid ${colors.neutral};
-            padding-bottom: 1.1rem;
+            ::after{
+                content: '';
+                position: absolute;
+                bottom: 2px;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background:  ${colors.neutral};
+                transform: scale(0);
+                transform-origin: left;
+                transition: 0.3s ease-in;
+                visibility: hidden;
+         
+            }
+
         }
+
+       
 
         @media screen and (max-width: 768px) {
             width: 1px;
