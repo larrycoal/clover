@@ -82,7 +82,7 @@ export const HamburgerIcon = styled.button`
     color: ${colors.neutral};
     display: flex;
     align-items: center;
-
+    z-index:10;
     ${props => props.toggleNav && css`
         transform: rotate(90deg);
     `}
