@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Logo } from "../../assets";
 import { FaBars } from "react-icons/fa";
 import { Wrapper, Button } from "../../components";
-
+import {Link} from "react-router-dom"
 import {
     Container,
     DesktopNav,
@@ -19,7 +19,9 @@ const Header = () => {
         <Container>
             <Wrapper header>
                 <DesktopNav>
+                    <Link to="/">
                     <Logo />
+                    </Link>
                     <HamburgerIcon onClick={handleToggleNav} toggleNav={toggleNav}>
                         <FaBars />
                     </HamburgerIcon>
@@ -37,10 +39,10 @@ const NavList = () => {
     return (
         <ul>
             <li>
-                <a href="/">Help</a>
+               <Link to="/help">Help</Link>
             </li>
             <li>
-                <a href="/">About Us</a>
+                <Link to="/about-us">About us</Link>
             </li>
             <li>
                 <Button>Get Help</Button>
