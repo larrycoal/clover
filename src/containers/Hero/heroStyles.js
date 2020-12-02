@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { colors } from "../../utils";
 
 export const HeroContainer = styled.section`
-  height: 100vh;
   background: ${colors.primary};
   color: ${colors.neutral};
   text-align: center;
+  font-size: 1rem;
 
   > :first-child {
     position: absolute;
@@ -37,32 +37,20 @@ export const HeroContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content:center;
-  height:100%;
-  font-size: .9rem;
   letter-spacing:1.5px;
-  font-family:'Open Sans', sans-serif;
   padding-top: 2.875rem;
 
   > :last-child {
     width: 90%;
+    height: 50%;
   }
 
-  > span{
-    font-size:1rem;
+  > span {
     font-weight:lighter
   }
   
   > * + * {
     margin-top: 1rem;
-
-    @media screen and (max-width: 768px) {
-      margin-top: 0.5rem;
-      /* height: 43.125rem; */
-      height: 800px;
-      background: ${colors.primary};
-      color: ${colors.neutral};
-      text-align: center;
-    }}
 `;
 
 
