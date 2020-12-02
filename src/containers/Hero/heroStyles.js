@@ -6,27 +6,28 @@ export const HeroContainer = styled.section`
   background: ${colors.primary};
   color: ${colors.neutral};
   text-align: center;
-  > :nth-child(1) {
+
+  > :first-child {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   > :nth-child(2) {
     position: absolute;
     left: 0;
     top: 0;
   }
+
   @media screen and (max-width: 768px) {
     > :nth-child(2) {
-        width:10rem;
-        transform:rotate(0deg)
+        width: 10rem;
     }
-    > :nth-child(1) {
-        width:10rem;
-        transform:rotate(-14deg);
-        top:-100px;
-        right:13px;
-        overflow:hidden
+
+    > :first-child {
+        width: 10rem;
+        top: -6.25rem;
+        right: 0;
     }
   }
 `;
@@ -41,24 +42,27 @@ export const HeroContent = styled.div`
   letter-spacing:1.5px;
   font-family:'Open Sans', sans-serif;
   padding-top: 2.875rem;
+
   > :last-child {
     width: 90%;
   }
+
   > span{
-      font-size:1rem;
-      font-weight:lighter
+    font-size:1rem;
+    font-weight:lighter
   }
+  
   > * + * {
     margin-top: 1rem;
 
     @media screen and (max-width: 768px) {
       margin-top: 0.5rem;
-    /* height: 43.125rem; */
-    height: 800px;
-    background: ${colors.primary};
-    color: ${colors.neutral};
-    text-align: center;
+      /* height: 43.125rem; */
+      height: 800px;
+      background: ${colors.primary};
+      color: ${colors.neutral};
+      text-align: center;
     }}
 `;
-    
+
 
