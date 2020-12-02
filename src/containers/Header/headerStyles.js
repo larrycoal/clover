@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
-import { colors } from "../../utils";
-
-
+import { colors, visuallyHidden } from "../../utils";
 
 export const Container = styled.header`
     background: ${colors.primary};
@@ -9,6 +7,8 @@ export const Container = styled.header`
     width: 100%;
     min-height: 4rem;
     overflow: hidden;
+    font-weight: 500;
+    font-size: 1.125rem;
 `;
 
 export const DesktopNav = styled.nav`
@@ -18,9 +18,8 @@ export const DesktopNav = styled.nav`
     padding-bottom: 0.8rem;
 
     > :first-child {
-        height: 1.875rem;
         margin-right: auto;
-        cursor: pointer;
+        z-index: 10;
     }
 
     > ul {
@@ -30,45 +29,9 @@ export const DesktopNav = styled.nav`
         > * + * {
             margin-left: 2rem;
         }
-        
-        
-        a{
-            color: #fff;
-            position: relative;
-            font-size: 18px;
-            font-weight: 500;
-            
-            :hover ::after{
-             transform: scale(1);
-             visibility: visible;
-             }
-           
-
-            ::after{
-                content: '';
-                position: absolute;
-                bottom: 2px;
-                left: 0;
-                height: 2px;
-                width: 100%;
-                background:  ${colors.neutral};
-                transform: scale(0);
-                transform-origin: left;
-                transition: 0.3s ease-in;
-                visibility: hidden;
-         
-            }
-
-        }
-
-       
 
         @media screen and (max-width: 768px) {
-            width: 1px;
-            height: 1px;
-            position: absolute;
-            clip: rect(0,0,0,0);
-            clip-path: inset(-50%);
+            ${visuallyHidden}
         }
     }
 `;
@@ -83,23 +46,19 @@ export const HamburgerIcon = styled.button`
     display: flex;
     align-items: center;
     z-index:10;
+    
     ${props => props.toggleNav && css`
         transform: rotate(90deg);
     `}
 
     @media screen and (min-width: 769px) {
-        width: 1px;
-        height: 1px;
-        position: absolute;
-        clip: rect(0,0,0,0);
-        clip-path: inset(-50%);
+        ${visuallyHidden}
     }
 `;
 
 export const MobileNav = styled.nav`
     transition: height 0.3s ease-in-out;
     height: ${props => props.toggleNav ? "13rem" : "0px"};
-    overflow: hidden;
     
     * {
         display: flex;
