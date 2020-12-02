@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../utils";
+import { colors, visuallyHidden } from "../../utils";
 
 export const Container = styled.footer`
     background: ${colors.primary};
@@ -33,19 +33,8 @@ padding-bottom: 0.8rem;
         margin-left: 2rem;
     }
 
-    a:hover, 
-    a:active, 
-    .active {
-        border-bottom: 4px solid ${colors.neutral};
-        padding-bottom: 1.1rem;
-    }
-
     @media screen and (max-width: 768px) {
-        width: 1px;
-        height: 1px;
-        position: absolute;
-        clip: rect(0,0,0,0);
-        clip-path: inset(-50%);
+        ${visuallyHidden}
     }
 }
 `;

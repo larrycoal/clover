@@ -3,7 +3,7 @@ import { Wrapper } from "../../components";
 import { Logo } from "../../assets";
 import { Container, FooterNav } from "./footerStyles";
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <Container>
             <Wrapper header>
@@ -31,3 +31,5 @@ const NavList = () => {
         </ul>
     );
 };
+
+export default Footer;
