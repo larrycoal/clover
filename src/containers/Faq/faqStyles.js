@@ -17,9 +17,23 @@ export const FaqContainer = styled.div`
         > * + * {
             margin-left: 1.5rem;
         }
+
+        > :last-child {
+            > * + * {
+                margin-top: 0.5rem;
+            }
+        }
     }
 
     @media screen and (max-width: 768px) {
         margin-top: 4.5rem;
+        
+        h2 {
+            text-align: center;
+        }
+
+        > * + * {
+            margin-top: 1rem;
+        }
     }
 `;

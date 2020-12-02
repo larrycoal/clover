@@ -10,6 +10,7 @@ export const Faq = () => {
             <FaqContainer>
                 <FaqImage />
                 <Stack>
+                    <h2>Frequently Asked Questions</h2>
                     {data.map(data => {
                         return (
                             <li key={data.answer}>
