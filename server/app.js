@@ -1,6 +1,6 @@
 const express = require("express")
 const db = require('./Database/config')
-const bcrypt = require("bcryptjs")
+//const bcrypt = require("bcryptjs")
 const app = express()
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
