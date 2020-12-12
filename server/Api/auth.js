@@ -7,8 +7,17 @@ api.post("/login",(req,res)=>{
     let {email,password} = req.body 
 db.query("SELECT * FROM users WHERE email = ?",[email],(err,result)=>{
     if (result[0].length>0){
-       bcrypt.compare(result[0].password,password)
-       res.json(result)
+       bcrypt.compare(result[0].password,password,(err,response)=>{
+           if (response){
+               req.session.user = result
+            res.json(result)
+           }else{
+            res.send({message:"wrong username/password"})
+           }
+       })
+       
+    }else{
+        res.send({message:"wrong username/password"})
     }
 })
 })
@@ -30,5 +39,18 @@ api.post("/register",(req,res)=>{
         }
     })
 })
+api.get("/user",(req,res)=>{
+    if (req.session.user){
+        res.send({
+            loggedIn:true,
+            user:req.session.user
+        })
+    }else{
+        res.send({
+            loggedIn:false
+        })
+    }
+})
+
 
 module.exports = api

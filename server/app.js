@@ -1,9 +1,31 @@
 const express = require("express")
 const db = require('./Database/config')
-//const bcrypt = require("bcryptjs")
+const bodyPaser = require('body-parser')
+const cors = require('cors')
+const cookie = require('cookie-parser')
+const session = require('express-session')
+
 const app = express()
-app.use(express.urlencoded({extended:false}))
+app.use(bodyPaser.urlencoded({extended:true}))
 app.use(express.json())
+app.use(cors({
+    origin:["http://localhost:3000"],
+    method:["GET","POST"],
+    credentials:true
+}))
+
+app.use(cookie())
+app.use(session({
+    key:"user",
+    secret:"kije",
+    resave:false,
+    saveUninitialized:false,
+    cookie:{
+        expires:60*60*24
+    }
+}))
+
+
 
 db.connect((error,result)=>{
     error?console.log(error):console.log(result)
